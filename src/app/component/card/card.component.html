@@ -1,0 +1,115 @@
+<div class="row card">
+  <div class="col-4 col4">
+    <div class="row">
+      <div class="col-4 inputDiv">
+        <input
+          type="text"
+          placeholder="Search 🍕 food corner"
+          style="margin: 1rem; outline: none"
+          #data
+        />
+        <button
+          type="button"
+          style="
+            border: none;
+            background-color: #ff001e;
+            color: #f8f9fa;
+            border-bottom-right-radius: 1rem;
+            border-top-right-radius: 1rem;
+            margin-left: -19px;
+            height: 1.9rem;
+          "
+          (click)="searchData(data.value)"
+        >
+          Search
+        </button>
+      </div>
+      <div class="col-8">
+        <ul class="listData">
+          <li (click)="filterFood('All')">All(8)</li>
+          <li (click)="filterFood('FastFood')">FastFood(6)</li>
+          <li (click)="filterFood('Pizza')">Pizza(3)</li>
+          <li (click)="filterFood('Lunch')">Lunch(3)</li>
+          <li (click)="filterFood('SlowFood')">SlowFood(2)</li>
+          <li (click)="filterFood('Humbarger')">Humbarger(2)</li>
+          <li (click)="filterFood('Fry')">Fry(1)</li>
+          <li (click)="filterFood('Soup')">Soup(1)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-8 cardListData">
+    <div class="row cardcol4">
+      <div class="col-3" *ngFor="let item of allData">
+        <div class="card" style="width: 18rem; margin-top: 1rem">
+          <img
+            src="{{ item.imageUrl }}"
+            class="card-img-top"
+            alt="pepperoni-pizza"
+            style="height: 12rem; width: 18rem"
+          />
+          <div class="card-body">
+            <div class="row cardData">
+              <div class="col-3 col3">
+                <div class="row">
+                  <div class="col-10">
+                    <h5 class="card-title" style="color: #ff001e">
+                      {{ item.name }}
+                    </h5>
+                  </div>
+                  <div
+                    class="col-2"
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
+                    <i
+                      [ngStyle]="{ color: item.favorite ? 'red' : 'grey' }"
+                      class="fa-solid fa-heart"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col3">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <div class="col-3 col3">
+                <div class="row">
+                  <div class="col-7">
+                    <label class="cardItem" *ngFor="let el of item.origins">{{
+                      el
+                    }}</label>
+                  </div>
+                  <div
+                    class="col-5"
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
+                    <i class="fa-regular fa-clock" style="margin-left: 2rem"></i
+                    ><span style="margin-left: 2px">{{ item.cookTime }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col3">
+                <span
+                  style="margin-top: 1rem; font-weight: 600"
+                  class="card-text"
+                  >${{ item.price }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

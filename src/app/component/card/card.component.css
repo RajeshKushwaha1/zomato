@@ -1,0 +1,59 @@
+.card {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.col-8 {
+  width: 100%;
+}
+.cardListData {
+  height: 24.8rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.cardcol4 {
+  display: flex;
+  flex-direction: row;
+}
+.col4 {
+  width: 100%;
+}
+.listData {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.listData > li {
+  margin: 3px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  font-style: oblique;
+  background-color: rgb(163, 166, 168);
+}
+.inputDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.cardData {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.col3 {
+  width: 100%;
+}
+.cardItem {
+  margin-right: 2px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 2rem;
+  text-align: center;
+  font-size: x-small;
+  font-style: oblique;
+  background-color: rgb(163, 166, 168);
+}
